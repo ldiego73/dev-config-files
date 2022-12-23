@@ -16,4 +16,10 @@ CTRL + b => Default Command
 CRL + a => Command Change
 CTRL + a + I => Install Plugins
 CTRL + a + ALT + u => Update Plugins
+
+CTRL + h        => Left
+CTRL + j        => Down
+CTRL + k        => Up
+CTRL + l        => Right
+CTRL + \        => Previous split
 ```
