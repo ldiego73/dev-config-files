@@ -1,5 +1,9 @@
 local opt = vim.opt
 
+opt.fileencoding = "utf-8"
+opt.mouse = "a"
+opt.updatetime = 300
+
 -- line numbers
 opt.relativenumber = true
 opt.number = true

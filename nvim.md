@@ -23,7 +23,9 @@ CTRL + o + 0                    => Edition mode, beginning of line
 CTRL + o + $                    => Edition mode, end of line
 
 u                               => Go back
-dw                              => Remove line
+D                               => Remove text to end of line
+dG                              => Remove text to end of file
+dgg                             => Remove text to star of file
 
 CTRL + h                        => Left
 CTRL + j                        => Down
@@ -45,4 +47,6 @@ gc + <number> + j               => Comment paragraph
 :%s/<word>/<replace>/g          => Search and replace text
 :%s/<word>/<replace>/gi         => Search and replace text case insensitive
 :%s/<word>/<replace>/gc         => Search and replace with confirmation
+n                               => next search
+ALT + n                         => prev search
 ```

@@ -38,8 +38,23 @@ dashboard.section.buttons.val = {
 }
 dashboard.section.header.val = header
 dashboard.section.footer.val = footer()
+
 dashboard.section.footer.opts.hl = "Constant"
 
 alpha.setup(dashboard.opts)
 
+vim.api.nvim_create_autocmd("User", {
+	pattern = "AlphaReady",
+	desc = "disable tabline for alpha",
+	callback = function()
+		vim.opt.showtabline = 0
+	end,
+})
+vim.api.nvim_create_autocmd("BufUnload", {
+	buffer = 0,
+	desc = "enable tabline after alpha",
+	callback = function()
+		vim.opt.showtabline = 2
+	end,
+})
 vim.cmd([[ autocmd FileType alpha setlocal nofoldenable ]])

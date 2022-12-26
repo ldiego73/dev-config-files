@@ -97,6 +97,13 @@ return require("packer").startup(function(use)
 	use({ "lewis6991/gitsigns.nvim", config = setup("gitsigns") })
 	-- ident blankline
 	use("lukas-reineke/indent-blankline.nvim")
+	-- Tabs
+	use({
+		"akinsho/bufferline.nvim",
+		tag = "v3.*",
+		requires = "nvim-tree/nvim-web-devicons",
+		config = setup("bufferline"),
+	})
 	-- dashboard
 	use({ "goolord/alpha-nvim", config = setup("alpha-nvim") })
 
