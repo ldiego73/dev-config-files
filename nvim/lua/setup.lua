@@ -27,11 +27,16 @@ if not status then
 	return
 end
 
+local setup = function(name)
+	return string.format('require("plugins.%s")', name)
+end
+
 return require("packer").startup(function(use)
 	use("wbthomason/packer.nvim")
 
 	-- Functions utils
 	use("nvim-lua/plenary.nvim")
+	use("windwp/nvim-spectre")
 	-- Theme
 	use("arcticicestudio/nord-vim")
 	-- Control windows
@@ -43,17 +48,17 @@ return require("packer").startup(function(use)
 	-- Replace text
 	use("inkarkat/vim-ReplaceWithRegister")
 	-- Add Line(s) comment(s)
-	use("numToStr/Comment.nvim")
+	use({ "numToStr/Comment.nvim", config = setup("comment") })
 	-- File explorer
 	use("nvim-tree/nvim-web-devicons")
-	use("nvim-tree/nvim-tree.lua")
+	use({ "nvim-tree/nvim-tree.lua", config = setup("nvim-tree") })
 	-- Statusline
-	use("nvim-lualine/lualine.nvim")
+	use({ "nvim-lualine/lualine.nvim", config = setup("lualine") })
 	-- Find files and text
 	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
-	use({ "nvim-telescope/telescope.nvim", tag = "0.1.0" })
+	use({ "nvim-telescope/telescope.nvim", tag = "0.1.0", config = setup("telescope") })
 	-- Autocompletion
-	use("hrsh7th/nvim-cmp")
+	use({ "hrsh7th/nvim-cmp", config = setup("nvim-cmp") })
 	use("hrsh7th/cmp-buffer")
 	use("hrsh7th/cmp-path")
 	-- Snippets
@@ -66,12 +71,16 @@ return require("packer").startup(function(use)
 	-- Configure LSP Servers
 	use("neovim/nvim-lspconfig")
 	use("hrsh7th/cmp-nvim-lsp")
-	use({ "glepnir/lspsaga.nvim", branch = "main" })
+	use({ "glepnir/lspsaga.nvim", branch = "main", config = setup("lsp.lspsaga") })
 	use("jose-elias-alvarez/typescript.nvim")
 	use("onsails/lspkind.nvim")
 	-- Format & Linting
-	use("jose-elias-alvarez/null-ls.nvim")
+	use({ "jose-elias-alvarez/null-ls.nvim", config = setup("lsp.null-ls") })
 	use("jayp0521/mason-null-ls.nvim")
+	-- Symbols Outline
+	use({ "simrat39/symbols-outline.nvim", config = setup("symbols-outline") })
+	-- Diagnostics
+	use("folke/trouble.nvim")
 	-- treesitter
 	use({
 		"nvim-treesitter/nvim-treesitter",
@@ -79,13 +88,17 @@ return require("packer").startup(function(use)
 			local ts_update = require("nvim-treesitter.install").update({ with_sync = true })
 			ts_update()
 		end,
+		config = setup("treesitter"),
 	})
 	-- auto closing
-	use("windwp/nvim-autopairs") -- autoclose parens, brackets, quotes, etc...
+	use({ "windwp/nvim-autopairs", config = setup("autopairs") }) -- autoclose parens, brackets, quotes, etc...
 	use({ "windwp/nvim-ts-autotag", after = "nvim-treesitter" }) -- autoclose tags
-
 	-- git
-	use("lewis6991/gitsigns.nvim")
+	use({ "lewis6991/gitsigns.nvim", config = setup("gitsigns") })
+	-- ident blankline
+	use("lukas-reineke/indent-blankline.nvim")
+	-- dashboard
+	use({ "goolord/alpha-nvim", config = setup("alpha-nvim") })
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins

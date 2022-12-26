@@ -13,8 +13,10 @@ j                               => next line
 k                               => prev line
 l                               => next column
 h                               => prev column
-SHIFT + l, G                    => end of file
-SHIFT + h, gg                   => start of file
+G                               => end of file
+gg                              => start of file
+V                               => select line
+Vj                              => select multiple lines
 
 
 CTRL + o + 0                    => Edition mode, beginning of line

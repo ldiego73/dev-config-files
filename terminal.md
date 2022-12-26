@@ -1,6 +1,7 @@
 ### Install Homebrew
 
 Open up a terminal window and install homebrew with the following command:
+
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
@@ -102,7 +103,6 @@ plugins=(git python vscode zsh-autosuggestions zsh-syntax-highlighting)
 
 Reload Oh My Zsh
 
-
 ```bash
 source ~/.zshrc
 ```
@@ -113,6 +113,7 @@ source ~/.zshrc
 brew install bat
 brew install ripgrep
 brew install lazygit
+brew install fzf
 ```
 
 ### Install Java from Mac M1
@@ -127,10 +128,10 @@ brew install --cask zulu11
 ```bash
 export PATH=$HOME/bin:/usr/local/bin:$HOME/.local/bin:$PATH
 
-export PYENV_ROOT="$HOME/.pyenv" 
-export PATH="$PYENV_ROOT/bin:$PATH" 
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
 
-eval "$(pyenv init --path)" 
+eval "$(pyenv init --path)"
 eval "$(pyenv init -)"
 
 # Optional
@@ -138,4 +139,3 @@ export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
 export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
 ```
-
