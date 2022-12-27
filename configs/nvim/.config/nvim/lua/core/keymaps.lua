@@ -8,8 +8,11 @@ keymap.set("i", "jk", "<ESC>")
 -- Clear search highlights
 keymap.set("n", "<leader>nh", ":nohl<CR>")
 
--- Delete character without copy
-keymap.set("n", "x", '"_x"')
+-- Delete without copy
+keymap.set("n", "d", '"_d"')
+keymap.set("n", "D", '"_D"')
+keymap.set("v", "d", '"_d"')
+keymap.set("v", "D", '"_D"')
 
 -- Increment/decrement
 keymap.set("n", "<leader>+", "<C-a>")
@@ -17,6 +20,15 @@ keymap.set("n", "<leader>-", "<C-x>")
 
 -- Select all
 keymap.set("n", "<leader>a", "gg<S-v>G")
+
+-- Save
+keymap.set("n", "<leader>w", "<cmd>update<cr>")
+
+-- Save the file if modified and quit
+keymap.set("n", "<leader>q", "<cmd>x<cr>")
+
+-- Quit all opened buffers
+keymap.set("n", "<leader>Q", "<cmd>qa!<cr>")
 
 -- Move text
 keymap.set("v", "J", ":m '>+1<CR>gv=gv")
