@@ -73,7 +73,7 @@ p10k configure
 2. Download my color profile by running the following command (will be added to Downloads folder):
 
 ```bash
-curl https://raw.githubusercontent.com/ldiego73/dev-config-files/main/develop.itermcolors --output ~/Downloads/develop.itermcolors
+curl https://raw.githubusercontent.com/ldiego73/dotfiles/main/configs/terminal/itermcolors/develop.itermcolors --output ~/Downloads/develop.itermcolors
 ```
 
 3. Open iTerm2 preferences
