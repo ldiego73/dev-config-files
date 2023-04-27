@@ -8,6 +8,10 @@ brew install tmux
 ```bash
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ```
+### Restart
+```bash
+tmux source ~/.tmux.conf
+```
 
 ### Keyboard
 
