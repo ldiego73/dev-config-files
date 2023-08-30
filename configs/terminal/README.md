@@ -128,14 +128,37 @@ brew install --cask zulu11
 ```bash
 export PATH=$HOME/bin:/usr/local/bin:$HOME/.local/bin:$PATH
 
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
+alias pod="arch -x86_64 pod"
 
-eval "$(pyenv init --path)"
+# npm
+export NVM_DIR="$HOME/.nvm"
+  [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
+# python
+export PYENV_ROOT="$HOME/.pyenv" 
+export PATH="$PYENV_ROOT/bin:$PATH" 
+
+eval "$(pyenv init --path)" 
 eval "$(pyenv init -)"
 
-# Optional
+# android
+
 export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
 export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
+
+# Rancher
+export RANCHER_ROOT=$HOME/.rd/bin
+export PATH=$PATH:$RANCHER_ROOT
+
+# Pulumi
+export PULUMI_CONFIG_PASSPHRASE_FILE=$HOME/.pulumi/passphrase.txt
+
+# Docker
+# ~/.rd/bin/rdctl shell sudo /etc/init.d/docker restart
+export DOCKER_HOST=unix://$HOME/.rd/docker.sock
+
+# Node
+export NODE_OPTIONS=--max-old-space-size=4096
 ```
