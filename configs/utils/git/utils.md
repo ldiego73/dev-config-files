@@ -12,3 +12,9 @@ git config --local credential.helper ""
 git config user.name <username>
 git config user.email <email>
 ```
+
+## Cherry Pick
+
+```bash
+git cherry-pick <commit-id>
+```

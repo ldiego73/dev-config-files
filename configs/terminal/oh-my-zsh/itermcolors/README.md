@@ -1,79 +1,59 @@
-### Install Homebrew
+# terminal
 
-Open up a terminal window and install homebrew with the following command:
+## Pre requisites
 
+**`Homebrew`**
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
-### Install iTerm2
-
-```bash
-brew install --cask iterm2
-```
-
-### Install Git
-
-```bash
-brew install git
-```
-
-### Install Oh My Zsh
+**`Oh My Zsh`**
 
 ```bash
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
-### Install PowerLevel10K Theme for Oh My Zsh
+**`Dependencies`**
 
 ```bash
-git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
+brew install --cask iterm2
+brew install git
 ```
 
-Now that it's installed, edit the `~/.zshrc` and change the value of ZSH_THEME
+**`fonts`**
 
 ```bash
-ZSH_THEME="powerlevel10k/powerlevel10k"
+brew tap homebrew/cask-fonts
+brew install font-hack-nerd-font
 ```
 
-Apply this change:
+## Configuration
 
 ```bash
 source ~/.zshrc
 ```
 
-### Install Meslo Nerd Font
-
-```bash
-brew tap homebrew/cask-fonts
-brew install --cask font-hack-nerd-font
-```
-
-### Update VSCode Terminal Font
+### VSCode
+Update VSCode Terminal Font
 
 ```json
 "terminal.integrated.fontFamily": "Hack Nerd Font Mono",
 ```
 
-### Configure PowerLevel10K
-
-```bash
-p10k configure
-```
-
-### Increase Terminal Font Size
+### iTerm2
+Increase Terminal Font Size:
 
 1. Open iTerm2 preferences
 2. Go to Profiles > Text
 3. I increase my font size to about 12px or more.
 
-### Change iTerm2 Colors with Custom Theme
+Change iTerm2 Colors with Custom Theme:
 
 1. Open iTerm2
 2. Download my color profile by running the following command (will be added to Downloads folder):
 
 ```bash
-curl https://raw.githubusercontent.com/ldiego73/dotfiles/main/configs/terminal/itermcolors/develop.itermcolors --output ~/Downloads/develop.itermcolors
+curl https://raw.githubusercontent.com/ldiego73/dotfiles/main/configs/terminal/itermcolors/<name>.itermcolors --output ~/Downloads/develop.itermcolors
 ```
 
 3. Open iTerm2 preferences
@@ -81,39 +61,39 @@ curl https://raw.githubusercontent.com/ldiego73/dotfiles/main/configs/terminal/i
 5. Import the downloaded color profile (develop)
 6. Select the color profile (develop)
 
-### Install ZSH Plugins
+## Plugins
 
-Install zsh-autosuggestions:
+### Utils
+
+```bash
+brew install ripgrep
+brew install fzf
+```
+
+### zsh-autosuggestions
+Install:
 
 ```bash
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 ```
 
-Install zsh-syntax-highlighting:
+### zsh-syntax-highlighting
+Install:
 
 ```bash
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 ```
 
-Edit the "~/.zshrc" and add the plugins:
+Edit the `~/.zshrc` and add the plugins:
 
 ```ini
 plugins=(git python vscode zsh-autosuggestions zsh-syntax-highlighting)
 ```
 
-Reload Oh My Zsh
+**Reload or apply changes**
 
 ```bash
 source ~/.zshrc
-```
-
-### Install utils
-
-```bash
-brew install bat
-brew install ripgrep
-brew install lazygit
-brew install fzf
 ```
 
 ### Install Java from Mac M1
@@ -147,10 +127,6 @@ eval "$(pyenv init -)"
 export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
 export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
-
-# Rancher
-export RANCHER_ROOT=$HOME/.rd/bin
-export PATH=$PATH:$RANCHER_ROOT
 
 # Pulumi
 export PULUMI_CONFIG_PASSPHRASE_FILE=$HOME/.pulumi/passphrase.txt
