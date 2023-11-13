@@ -4,6 +4,7 @@
 
 ```bash
 brew install docker
+brew install kubectl
 brew install colima
 ```
 
