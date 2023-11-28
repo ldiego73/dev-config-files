@@ -1,5 +1,2 @@
-require("setup")
-require("core")
-
-require("plugins.lsp.mason")
-require("plugins.lsp.lspconfig")
+-- bootstrap lazy.nvim, LazyVim and your plugins
+require("config.lazy")
