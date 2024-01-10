@@ -10,6 +10,7 @@ alias cat='bat'
 alias pod="arch -x86_64 pod"
 
 # fnm
+# create before dir: mkdir $HOME/.fnm
 eval "$(fnm env --use-on-cd)"
 
 # android
